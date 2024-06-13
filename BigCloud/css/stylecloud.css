@@ -1,0 +1,75 @@
+.clearFix{
+    clear: both;
+}
+
+.boxNav{
+    display: block;
+    border: 3px solid #FA41B3;
+    border-left: 0px;
+    border-right: 0px;
+    height: 95px;
+    width: 100%;
+    margin: 0;
+}
+body{
+    font-family:'Courier New', Courier, monospace;
+}
+/* campo sbagliato */
+.borderRed{
+    border: 1px solid red;
+}
+/* background colore */
+.bg{     
+    background-color: #545454;
+}
+/* testo */
+.text{
+    text-align: center;
+    color: white;
+    font-style:inherit;
+}
+.text2{
+    text-align: center;
+    color: #FA41B3;
+}
+.text3{
+    text-align: right;
+    color: #FA41B3;
+    font-family:'Courier New', Courier, monospace;
+    float: left; 
+    line-height: 160px; 
+    margin-left: 30px;
+}
+
+/* allineamento */
+.allineamentoc{
+    align-content: center;
+}
+.allineamento_a_s{
+    align-content: end;
+}
+.primo {
+    border-bottom: 1px solid #FA41B3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+.dimLogo{
+    width: auto;
+    height: 120px;
+    margin-left: 50px;
+}
+
+/* bottone */
+.noUnd{
+    text-decoration: none;
+}
+button  a{
+    text-decoration: none;
+    color: black;
+    
+}
+/* modifica placeholder */
+::placeholder{
+    text-align: center;
+    color: black;
+}
