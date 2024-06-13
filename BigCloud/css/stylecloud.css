@@ -7,9 +7,28 @@
     border: 3px solid #FA41B3;
     border-left: 0px;
     border-right: 0px;
-    height: 95px;
+    height: 80px;
     width: 100%;
     margin: 0;
+    
+}
+.boxNav2{
+    
+    border: 3px solid #FA41B3;
+    width: 250px;
+    height: 80vh;
+    margin-top: 0px;
+    margin-left: 10px;
+    border-top: 300px;
+}
+.boxNav3{
+    
+    border: 3px solid #FA41B3;
+    width: 1600px;
+    height: 80vh;
+    margin-top: 0px;
+    margin-left: 10px;
+    border-top: 300px;
 }
 body{
     font-family:'Courier New', Courier, monospace;
@@ -31,9 +50,10 @@ body{
 .text2{
     text-align: center;
     color: #FA41B3;
+    font-family:'Courier New', Courier, monospace;
 }
 .text3{
-    text-align: right;
+    text-align: justify;
     color: #FA41B3;
     font-family:'Courier New', Courier, monospace;
     float: left; 
@@ -48,17 +68,19 @@ body{
 .allineamento_a_s{
     align-content: end;
 }
-.primo {
-    border-bottom: 1px solid #FA41B3;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
+
 .dimLogo{
     width: auto;
     height: 120px;
     margin-left: 50px;
 }
-
+.flex{
+    border: 50px #FA41B3;
+    align-items:normal;
+}
+.altezza{
+    height: 150px;
+}
 /* bottone */
 .noUnd{
     text-decoration: none;
@@ -72,4 +94,10 @@ button  a{
 ::placeholder{
     text-align: center;
     color: black;
+}
+/* bottoni */
+.bottoni{
+    background-color: #545454;
+    
+        
 }
