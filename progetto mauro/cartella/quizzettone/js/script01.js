@@ -1,4 +1,4 @@
-const URL=""
+
 
 class User {
     constructor(Username, livello) {
@@ -7,51 +7,40 @@ class User {
     }
 }
 
-let Username = document.querySelector("#Username");               //input , selezione e tasto start
-let livello = document.querySelectorAll('input[name="livello"]');
+//input , selezione e tasto start
+
 let btnStart = document.getElementById("btnStart");
 
 function validate() {  //funzione di analisi riempimento e attivazione 
     demo.innerHTML = "";//svuoto e resetto i campi dopo linserimento
-
+    
 
     let inputColorati = document.querySelectorAll("input .borderRed");//eliminazione errore compilazione
     inputColorati.forEach(inputColorati => {
         inputColorati.removeAttribute("class");
     })
 
-    let Username = document.querySelector("#Username").value; // user
-    let livello = document.querySelector("input[type=radio][name=livello]:checked").value; // selezione
+    let Username = document.querySelector("#Username").value;
+    one
     
-    validateUsername(Username, event);                           /** sto cercando di capire come far */
-   // btnStart.location.replace("./quizzettone/page01.html")     /**    sunzionare il fottuto bottone */
-
-    if (livello == null) {                    //controllo campo livello
-        demo.innerHTML += "<p>non hai scelto il livello</p>"
-        event.preventDefault();
+    validateUsername(Username);                         
         
-    }
 }
-function getutente(){
-        fetch(URL)
-        .then(data => {
-            return data.json(); //il metodo json() converte il json in obj
-        }
-        )
-        .then(response => {
-                    localStorage.setItem("userConnesso", JSON.stringify(response));        
-                })        
-    }
 
-function validateUsername(Username, event) {                       //controllo user
+
+
+function validateUsername(Username) {                       //controllo user
     if (Username == "" || Username.length <= 3) {
         demo.innerHTML += "<p>hai dimenticato il nome, usa almeno 3 caratteri</p>";
         document.querySelector("#Username").setAttribute("class", "borderRed");
         event.preventDefault();
         event.stopImmediatePropagation();
+        
+    }else{
+        localStorage.setItem("Username", Username);
     }
 }
 
-
+// ricordati di modificare (aggiungi due bottoni uno facile e uno difficile che facciano partire il sito)
 
 btnStart.addEventListener('click',validate);
