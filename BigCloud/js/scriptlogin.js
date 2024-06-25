@@ -1,3 +1,6 @@
+const URL_endpoint = "http://localhost:9179/api/";
+
+
 class Utente{
     constructor(username,pass){
         this.username=username;        
@@ -6,31 +9,49 @@ class Utente{
 }
 
 let formLogin=document.querySelector("#formReg");
-let lg=document.querySelector("#reg");
+let lg=document.querySelector("#lg");
 
 function validate(){
     lg.innerHTML="";
     //acquisizione controllo
-
+    
     let inputColorati=document.querySelectorAll("input .borderRed");
     inputColorati.forEach(inputColorati=>{
-    inputColorati.removeAttribute("class");
-})
+        inputColorati.removeAttribute("class"); 
+    })
     let username=document.querySelector("#username").value;    
     let pass=document.querySelector("#pass").value;   
     
-
-    validateUsername(username,event);    
-    validatePass(pass,event);
     
-   
+    if(validateUsername(username,event) && validatePass(pass,event)){
+        login(username, password);
+    };
+    
 }
+    
+function login(username, password){
+    URL = URL_endpoint+`utente/login/${username}&${password}`;
+    fetch(URL)
+    .then(data => {
+        return data.json(); //il metodo json() converte il json in obj
+    }
+    )
+    .then(response => {
+        localStorage.setItem("userConnesso", JSON.stringify(response));        
+        location.href = "./home.html";
+    })        
+    
+    
+};   
+
 function validateUsername(username,event){
     if(username==""|| username.length<=2){
         demo.innerHTML+= "<p>hai dimenticato l'username</p> ";
         document.querySelector("#username").setAttribute("class","borderRed");
         event.preventDefault();
         event.stopImmediatePropagation();
+    }else{
+        return true;
     }
 }
 
@@ -41,21 +62,11 @@ function validatePass(pass,event){
         document.querySelector("#pass").setAttribute("class","borderRed");
         event.preventDefault();
         event.stopImmediatePropagation();
+    }else{
+        return true;
     }
 }
-function getUsername(){
-    fetch(URL)
-    .then(data => {
-        return data.json(); //il metodo json() converte il json in obj
-    }
-    )
-    .then(response => {
-                localStorage.setItem("userConnesso", JSON.stringify(response));
-        
-            });
 
-    // inserisci la costante url
-}
 
 
 formLogin.addEventListener("submit",validate);
